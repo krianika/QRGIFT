@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Contributions</title></head>
+<body>
+<h2 th:text="'Contributions for ' + ${user.name}"></h2>
+<ul>
+  <li th:each="c : ${contributions}">
+    <span th:text="${c.amount}">0</span> by <span th:text="${c.contributorName}">name</span>
+  </li>
+</ul>
+<form th:action="@{/invest/{id}(id=${user.id})}" method="get">
+  <button type="submit">Invest All Contributions</button>
+</form>
+</body>
+</html>

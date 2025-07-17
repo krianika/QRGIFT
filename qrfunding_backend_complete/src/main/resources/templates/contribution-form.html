@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Contribute</title></head>
+<body>
+<h2>Contribute to [[${user.name}]]</h2>
+<form th:action="@{/contributions/submit}" method="post" th:object="${contribution}">
+  <input type="hidden" name="userId" th:value="${user.id}"/>
+  Amount: <input th:field="*{amount}" required/><br/>
+  Name: <input th:field="*{contributorName}" required/><br/>
+  Email: <input th:field="*{contributorEmail}" required/><br/>
+  Note: <textarea th:field="*{contributorNote}"></textarea><br/>
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>

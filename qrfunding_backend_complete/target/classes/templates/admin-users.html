@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Users</title></head>
+<body>
+<h2>All Users</h2>
+<ul>
+  <li th:each="u : ${users}">
+    <a th:href="@{/admin/user/{id}/contributions(id=${u.id})}"
+       th:text="${u.name}">User</a>
+  </li>
+</ul>
+</body>
+</html>
